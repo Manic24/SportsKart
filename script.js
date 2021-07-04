@@ -1,3 +1,4 @@
+//Add to cart
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -101,3 +102,23 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
+
+// Search
+function myFunction() {
+    var search_input = document.getElementById("searchInput").value;
+    var input = search_input.toUpperCase();
+    var contents = document.getElementsByClassName("shop-item");
+  
+    for (let i = 0; i < contents.length; i++) {
+      x = contents[i].innerText.toUpperCase();
+      if (!(x.indexOf(input) > -1)) {
+        // console.log('true');
+        contents[i].style.display = "none";
+        if (contents[i].style.display == "none") {
+          console.log("Not found");
+        }
+      } else {
+        contents[i].style.display = "block";
+      }
+    }
+  }
