@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SportsKart-Account</title>
+    {% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/94b5145fb6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+    <!--header-->
+<div class="header">
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="home/" class="sk" style="color:lightcoral;">Sports</a>
+			<a href="home/" class="sk" style="color:indigo;">Kart</a>
+        </div>
+        <nav>
+            <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/account">Account</a></li>
+            <li><a href="">About</a></li>
+			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
+            </ul>
+        </nav>
+		
+    </div>
+</div>
+</div> 
+
+    <!-- account-page -->
+
+    <div class="account-page">
+      <div class="container">
+        <div class="row"> 
+          <div class="col-2">
+            <div class="form-container">
+              <div class="form-btn">
+                <span>Register</span>
+               
+              </div>
+              <form action="" method="POST">
+              {% csrf_token %}
+                <input type="text" placeholder="Username" name="username"/>
+                <input type="email" placeholder="E-mail" name="email"/>
+                <input type="password" placeholder="Password" name="password"/>
+                <button type="submit" class="btn">Register</button>
+                <p class="signup">Already a User?<a href="/">Login</a></p>
+              </form>
+             
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- js for toogle menu  -->
+
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.Style.maxHeight = "0px";
+      function menutoogle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+  <!-----Footer------>
+<div class="footer">
+	<div class="container">
+	<center><h2>Contact Us</h2></center>
+    <div class="icons">
+    <center><i class="fa fa-facebook-official"></i><i class="fa fa-instagram"></i></center><hr>
+	<p class="copyright">© 2021 . All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.
+			 </p>
+    </div>
+</div>
+</div>
+
+  </body>
+</html>

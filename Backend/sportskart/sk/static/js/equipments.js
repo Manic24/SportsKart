@@ -1,0 +1,166 @@
+let cart2=document.querySelectorAll(".add---cart");
+
+let product2=
+[
+{
+
+	name:"PVC Home Gym Set 10-20kg Plate 3feet curl Rod and Dumbbells rods",
+	tag:"g1",
+	price:10,
+	incart:0
+
+},{
+	name:"Home Gym Set,[8Kg-60 Kg], 4Ft Straight Rod + One Pair Dumbbell Rods, PVC Dumbbell Plates",
+	tag:"g2",
+	price:99,
+	incart:0
+
+},{
+	name:"Power Squat Rack with LAT Pull Down",
+	tag:"g3",
+	price:150,
+	incart:0
+
+},{
+	name:"Redex Adjustable Bench",
+	tag:"g4",
+	price:25,
+	incart:0
+
+},{
+	name:"Push Up Bar,AB Roller,Toning Tube,Pull Reducer",
+	tag:"g5",
+	price:50,
+	incart:0
+
+}
+];
+for (let i=0;i<cart2.length;i++)
+{
+	cart2[i].addEventListener('click',() => {
+		cartno(product2[i]);
+		totalcost(product2[i]);
+	})
+	
+}
+
+function load(){
+	let productno = localStorage.getItem("cartno");
+	if(productno)
+	{
+		document.querySelector(".navbar span").textContent=productno;
+		document.querySelector(".sticky span").textContent=productno;
+
+	}
+
+}
+function cartno(product2) {
+	
+	let productno = localStorage.getItem("cartno");
+	
+	productno= parseInt(productno);
+	
+	if(productno)
+	{
+		localStorage.setItem("cartno",productno+1);
+		document.querySelector(".navbar span").textContent=productno+1;
+		document.querySelector(".sticky span").textContent=productno+1;
+	}else{
+		localStorage.setItem("cartno",1);
+		document.querySelector(".navbar span").textContent=1;
+		document.querySelector(".sticky span").textContent=1;
+
+	}
+	setItems(product2);
+}
+function setItems(product2){	
+	let cartItems=localStorage.getItem('productcart');
+	cartItems=JSON.parse(cartItems)
+	
+
+
+	if(cartItems!= null){
+		// console.log(cartItems[product.tag]);
+		if(cartItems[product2.tag] == undefined){
+			cartItems={
+				...cartItems,
+				[product2.tag]:product2
+			}
+		}
+
+		cartItems[product2.tag].incart += 1 ; 
+	}else{
+		product2.incart=1;
+		cartItems={
+			[product2.tag]:product2
+		}
+
+	}
+	
+	localStorage.setItem("productcart",JSON.stringify(cartItems));	
+
+
+}
+
+function totalcost(product2) { 
+	// console.log(product.price);
+	let cartcost=localStorage.getItem("totalcost");
+	// console.log(cartcost);
+	
+
+
+	if(cartcost!= null)
+	{
+		cartcost=parseInt(cartcost);
+		localStorage.setItem("totalcost",cartcost+product2.price);
+	}else{
+	localStorage.setItem("totalcost",product2.price);
+	}
+}
+
+function displaycart() {
+	let cartItems=localStorage.getItem("productcart");
+	cartItems=JSON.parse(cartItems);
+	let productcontainer= document.querySelector(".product-container");
+	let cartcost=localStorage.getItem("totalcost");
+
+	// console.log(cartItems);
+	if(cartItems && productcontainer){
+		// console.log(cartItems);
+		productcontainer.innerHTML ='';
+		Object.values(cartItems).map(item =>{
+			productcontainer.innerHTML += `
+			<div class="product">
+			<img src="images/cancel1.png" width="10px" height="10px" onclick="remove()" >
+			<img src="./images/${item.tag}.png"><span>${item.name}</span>
+			</div>
+			<div class="price">Rs. ${item.price}.00</div>
+			<div class="quantity">${item.incart}
+			<i class="fas fa-sort-up"></i>
+			<i class="fas fa-sort-down"></i>
+			</div>
+			<div class="total">
+			Rs. ${item.incart*item.price}.00
+			</div>
+			`;
+		});
+		productcontainer.innerHTML +=`
+		<div class="baskettotalcontainer">
+		<h4 class="baskettotaltitle">
+		Basket Total 
+		</h4>
+		<h4 class="baskettotal">
+		Rs. ${cartcost}.00
+		</h4>
+		</div>
+		`;
+
+	}
+
+
+	
+}
+
+
+load();
+displaycart();

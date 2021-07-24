@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>SportsKart-Products</title>
+    {% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<!--header-->
+<div class="header">
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="home/" class="sk" style="color:lightcoral;">Sports</a>
+			<a href="home/" class="sk" style="color:indigo;">Kart</a>
+        </div>
+        <nav>
+            <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/account">Account</a></li>
+            <li><a href="">About</a></li>
+			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
+            </ul>
+        </nav>
+		
+    </div>
+</div>
+</div> 
+
+<div class="sticky">
+	<a href="/cart"><img src="{% static 'images/cart.png' %}" width="70px" height="70px"><span >0</span></a> 
+</div>
+<!-----categories---->
+
+<div class="title">
+    <h2>Categories</h2>
+</div>
+
+ <div class="grid-container">
+    <a href="/sneakers"><div class="sneak" style="background-image:url('{% static 'images/product1.png' %}')"><h2>Sneakers</h2></div></a>
+    <a href="/kits"><div class="kits" style="background-image:url('{% static 'images/z2.png' %}')"><h2>Kits</h2></div></a>
+    <a href="/apparel" class="apparel" style="background-image:url('{% static 'images/x5.png' %}')"><div><h2>Apparels</h2></div></a>
+    <a href="/equipments" class="equip" style="background-image:url('{% static 'images/g2.png' %}')"><div><h2>Fitness Equipments</h2></div></a>
+    <a href="/accessories" class="access" style="background-image:url('{% static 'images/a2.png' %}')"><div><h2>Accessories</h2></div></a>
+    <a href="/supplements" class="sup" style="background-image:url('{% static 'images/s2.png' %}')"><div><h2>Nutrition</h2></div></a>
+</div>
+
+<!-----Footer------>
+<div class="footer">
+	<div class="container">
+	<center><h2>Contact Us</h2></center>
+    <div class="icons">
+    <center><i class="fa fa-facebook-official"></i><i class="fa fa-instagram"></i></center><hr>
+	<p class="copyright">© 2021 . All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.
+			 </p>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="{% static 'js/asd.js' %}"> </script>
+<script type="text/javascript" src="{% static 'js/asdhome.js' %}"> </script>
+ 
+</body>
+</html>
