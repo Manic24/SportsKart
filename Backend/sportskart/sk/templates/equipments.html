@@ -30,7 +30,7 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/products">Products</a></li>
             <li><a href="/account">Account</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/about">About</a></li>
 			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
             </ul>
         </nav>
@@ -51,21 +51,10 @@
 <div class="small small-container">
 	<h2 class="title"id="pro">Gym Equipments</h2>
 	<div class="row">
-		<div class="col-61">
-			<img src="{% static 'images/g1.png' %}">
-			<h4>PVC Home Gym Set 10-20kg Plate 3feet curl Rod and Dumbbells rods</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-			</div>
-			<p>Rs.10 <a   class="add---cart cart19">Add to cart &#10011</a></p>
-		</div>
-		<div class="col-61">
-			<img src="{% static 'images/g2.png' %}">
-			<h4>Home Gym Set,[8Kg-60 Kg], 4Ft Straight Rod + One Pair Dumbbell Rods, PVC Dumbbell Plates</h4>
+		{% for prods in prod %}
+		<div class="col-6">
+			<img src="{{prods.img.url}}">
+			<h4>{{prods.prodname}}</h4>
 			<div class="rating">
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star"></i>
@@ -73,44 +62,10 @@
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star-o"></i>
 			</div>
-			<p>Rs.99  <a   class="add---cart cart20">Add to cart &#10011</a></p>
-			</div>
-		<div class="col-61">
-			<img src="{% static 'images/g3.png' %}">
-			<h4>Power Squat Rack with LAT Pull Down</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o"></i>
-				<i class="fa fa-star-o"></i>
-			</div>
-			<p>Rs.150  <a   class="add---cart cart21">Add to cart &#10011</a></p>
+			<p>{{prods.price}}<a class="{{prods.addcart}}">Add to cart &#10011</a></p>
 		</div>
-		<div class="col-61">
-			<img src="{% static 'images/g4.png' %}">
-			<h4>Redex Adjustable Bench</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i ass="fa fa-star-half-o"></i>
-			</div>
-			<p>Rs.25  <a   class="add---cart cart22">Add to cart &#10011</a></p>
-		</div>
-		<div class="col-61">
-		<img src="{% static 'images/g5.png' %}">
-		<h4>Push Up Bar,AB Roller,Toning Tube,Pull Reducer</h4>
-		<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o"></i>
-			</div>
-			<p>RS.50  <a   class="add---cart cart23">Add to cart &#10011</a></p>
-		</div>
+	{% endfor %}
+		
 </div>
 </div>
 

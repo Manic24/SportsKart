@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<title>SportsKart-Accessories</title>
+	<title>SportsKart-About</title>
 	{% load static %}
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,6 @@
 
 </head>
 <body>
-<!--header-->
 <div class="header">
 <div class="container">
     <div class="navbar">
@@ -38,36 +37,20 @@
 </div>
 </div> 
 
-<div class="sticky">
-	<a href="/cart" images/cart.png><img src="{% static 'images/cart.png' %}" width="70px" height="70px"><span >0</span></a> 
-</div>
+<div>
+<h2 class="title">About</h2><br>
+<p style="margin-left:20px;margin-right:20px">
+SportsKart is an online shopping system that permits a customer to submit online orders for items and/or services from a store that serves both walk-in-customers and online customers who are interested in Sports and Fitness Freaks. Online Sports & Fitness Shopping project.This project covers the basic functionality of an e-commerce website. It is a dedicated e-commerce web application related to sports & Fitness where we get to explore more products, customers can submit online orders for items and services from top brands & stores which serves both walk-in-customers and online customers.
+The main idea of this project is to provide a reference number to the customers at the time of order placement along with the acknowledgement which will be referred by the delivery person at the time of Delivery. where the Delivery person must receive the reference code from the customers directly at the time of delivery to complete the Product Delivery.
+</p>
+<h2 class="title">Contact</h2><br>
+<p style="margin-left:620px"><b>Phone Number</b> : +91 9876543210</p>
+<p style="margin-left:620px"><b>Email</b> : sportskart07@gmail.com</p>
+<h2 class="title">Location</h2><br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15609.739034087062!2d79.8489946!3d12.0135619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5c0d300c8187a76b!2sPondicherry%20Engineering%20College!5e0!3m2!1sen!2sin!4v1627715967952!5m2!1sen!2sin" width="600" height="450" style="border:0; margin-left:460px;" allowfullscreen="" loading="lazy"></iframe>
+</div><br>
 
-<!-----search------>
-   <div class="containerr">
-        <input type="search" id="searchInput" name="search" placeholder="Search for pincode,place,name...." value="" onkeyup="myFunction()" >
-    </div>
-	
-<!---sneakers-->
-<div class="small small-container">
-	<h2 class="title"id="pro">Accessories</h2>
-	<div class="row">
-		{% for prods in prod %}
-		<div class="col-6">
-			<img src="{{prods.img.url}}">
-			<h4>{{prods.prodname}}</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-o"></i>
-			</div>
-			<p>{{prods.price}}<a class="{{prods.addcart}}">Add to cart &#10011</a></p>
-		</div>
-	{% endfor %}
-</div>
-</div>
-
+<script type="text/javascript" src="{% static 'js/asd.js' %}"> </script>
 <!-----Footer------>
 <div class="footer">
 	<div class="container">
@@ -79,36 +62,5 @@
     </div>
 </div>
 </div>
-
-<!--------js for toggle menu-------->
-<script>
-var MenuItems = document.getElementById("MenuItems");
-	
-	function menutoggle(){
-			 var x = document.getElementById("MenuItems");
-				if (x.style.display === 'none') {
-					x.style.display = 'block';
-				} else {
-					x.style.display = 'none';
-					}
-	}
-	
-
-</script>
-<script type="text/javascript" src="{% static 'js/asd.js' %}"> </script>
-<script type="text/javascript" src="{% static 'js/asdhome.js' %}"> </script>
-<script type="text/javascript" src="{% static 'js/accessories.js' %}"> </script>
-<script type="text/javascript" src="{% static 'js/search.js' %}"> </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

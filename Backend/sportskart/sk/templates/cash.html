@@ -37,48 +37,58 @@
 </div>
 </div>
 
-<h1 class="title">Cart</h1>
-<div class="product-header1">
-	<h5 class="product-title">Product</h5>
-	<h5 class="price">Price</h5>
-	<h5 class="quantity">Quantity</h5>
-	<h5 class="total1">Total</h5>
-	</div>
+<div class="container11">
+			<form method="POST">
+			{% csrf_token %}
+			<div class="row11">
+			<div class="col-50">
+			<h3>Delivery Address</h3>
+			<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+			<input type="text" id="fname" name="username" placeholder="Your Name">
+			<label for="email"><i class="fa fa-envelope"></i> Email</label>
+			<input type="text" id="email" name="email" placeholder="mail@gmail.com">
+			<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+			<input type="text" id="adr" name="address" placeholder="YourAddress....">
+			<label for="city"><i class="fa fa-institution"></i> City</label>
+			<input type="text" id="city" name="city" placeholder="YourCity">
 
-<div class="product-container">
+			<div class="row11">
+			<div class="col-50">
+			<label for="state">State</label>
+			<input type="text" id="state" name="state" placeholder="State">
+			</div>
+			<div class="col-50">
+			<label for="zip">PIN</label>
+			<input type="text" id="zip" name="pin" placeholder="pincode">
+			</div>
+			</div>
+			</div>
 
 
 
+			</div>
+			
+			<div class="checkout">
+			<input type="submit"  id="myBtn1" value="Continue to BUY" class="btnnc" onclick="and()">
+			
+			<div class="mony">
 
-	
-	<div class="product">
+			</div>
 
-
-
-	</div>
-</div>
-
-
-<div class="cart" id="hie"> 	
-	<div class="payment" id="paym">
-		<h2>Select Payment Method</h2>
-		<div class="styl">
-		<p class="do" >Online Payment</p>
-		<a class="btnc" href="\card">BUY &#10003</a> 
+			
+			</div>
 			
 
-		</div>
-		<div class="styl">
-		<p class="do" >Cash On Delivery</p>
-		<a class="btnc" href="\cash">BUY &#10003</a> 	
-		</div>
-		
-		</div> 
-		<br>
-		</div>
+				
+
+			</form>
+
+
+
+			</div>
+
 
 <script type="text/javascript" src="{% static 'js/asd.js' %}"> </script>
-<!-----Footer------>
 <div class="footer">
 	<div class="container">
 	<center><h2>Contact Us</h2></center>

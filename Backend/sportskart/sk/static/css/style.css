@@ -191,6 +191,21 @@ nav li h1{
 
 }
 
+.confirm{
+	font-size: 50px;
+	width: 100%;
+	line-height: 50px;
+	margin: 25px 0;
+	color: black;
+	text-align: center;
+}
+.con{
+	text-align: center;
+	margin-top: 100px;
+	justify-content: space-around;
+	
+	
+}
 .col-22{
 	flex-basis: 50%;
 	min-width: 300px;
@@ -339,6 +354,27 @@ nav li h1{
 	background: #ff523b;
 	width: 80px;
 	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.tiitle{
+	justify-content: center;
+	text-align: center;
+	margin-top: 70px;
+	position: relative;
+	line-height: 70px;
+	color: black;
+	font-size: 30px;
+}
+.tiitle::after{
+	content: '';
+	background: #ff523b;
+	width: 250px;
+	height: 7px;
 	border-radius: 5px;
 	position: absolute;
 	bottom: 0;
@@ -831,7 +867,7 @@ text-align: center;
 
 .payment h2{
 	margin-top: 20px;
-	color:#c4f0fd;
+	color:white;
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -843,6 +879,7 @@ text-align: center;
 	justify-content: center;
 	padding: 10px 0;
 	font-size: 20px;
+	color: #fff;
 }
 .dopa{
 	display: flex;
@@ -995,19 +1032,15 @@ div.sticky {
   }
   
   .btnnc {
-	display: inline-flex;
-	justify-content: safe center;
+	
 	background-color: #04AA6D;
 	color: white;
-	padding: 12px;
-	
-	margin: 10px 0;
 	border: none;
 	width: 50%;
 	border-radius: 3px;
 	cursor: pointer;
 	font-size: 17px;
-	align-content: center;
+	
   }
   
   .btnnc:hover {
@@ -1076,7 +1109,7 @@ div.sticky {
 
 .account-page {
 	padding: 50px 0;
-	background: #fff;
+	background: radial-gradient(lightgray,rgb(196, 151, 196));
   }
   .form-container {
 	background: #fff;
@@ -1088,6 +1121,7 @@ div.sticky {
 	margin: auto;
 	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
+	margin-top: 25px;
   }
   .form-container span {
 	font-weight: bold;
@@ -1106,7 +1140,7 @@ div.sticky {
 	cursor: pointer;
 	width: 100px;
 	display: inline-block;
-	margin-right: 50px;
+	
   }
   .form-btn {
 	display: inline-block;

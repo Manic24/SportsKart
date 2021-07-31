@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<title>SportsKart-Accessories</title>
+	<title>SportsKart-Cart</title>
 	{% load static %}
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 
 </head>
 <body>
-<!--header-->
+	<!--header-->
 <div class="header">
 <div class="container">
     <div class="navbar">
@@ -29,46 +29,21 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/products">Products</a></li>
             <li><a href="/account">Account</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="">About</a></li>
 			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
             </ul>
         </nav>
-		
     </div>
 </div>
-</div> 
-
-<div class="sticky">
-	<a href="/cart" images/cart.png><img src="{% static 'images/cart.png' %}" width="70px" height="70px"><span >0</span></a> 
 </div>
 
-<!-----search------>
-   <div class="containerr">
-        <input type="search" id="searchInput" name="search" placeholder="Search for pincode,place,name...." value="" onkeyup="myFunction()" >
-    </div>
-	
-<!---sneakers-->
-<div class="small small-container">
-	<h2 class="title"id="pro">Accessories</h2>
-	<div class="row">
-		{% for prods in prod %}
-		<div class="col-6">
-			<img src="{{prods.img.url}}">
-			<h4>{{prods.prodname}}</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-o"></i>
-			</div>
-			<p>{{prods.price}}<a class="{{prods.addcart}}">Add to cart &#10011</a></p>
-		</div>
-	{% endfor %}
-</div>
-</div>
 
-<!-----Footer------>
+<div class="con">
+<h1 class="confirm">Thank You For Purchasing</h1>
+<a href="/home" class="btn">Click Here &#8594</a>
+<div>
+
+
 <div class="footer">
 	<div class="container">
 	<center><h2>Contact Us</h2></center>
@@ -79,36 +54,5 @@
     </div>
 </div>
 </div>
-
-<!--------js for toggle menu-------->
-<script>
-var MenuItems = document.getElementById("MenuItems");
-	
-	function menutoggle(){
-			 var x = document.getElementById("MenuItems");
-				if (x.style.display === 'none') {
-					x.style.display = 'block';
-				} else {
-					x.style.display = 'none';
-					}
-	}
-	
-
-</script>
-<script type="text/javascript" src="{% static 'js/asd.js' %}"> </script>
-<script type="text/javascript" src="{% static 'js/asdhome.js' %}"> </script>
-<script type="text/javascript" src="{% static 'js/accessories.js' %}"> </script>
-<script type="text/javascript" src="{% static 'js/search.js' %}"> </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

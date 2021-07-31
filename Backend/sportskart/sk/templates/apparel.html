@@ -30,7 +30,7 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/products">Products</a></li>
             <li><a href="/account">Account</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/about">About</a></li>
 			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
             </ul>
         </nav>
@@ -50,21 +50,10 @@
 <div class="small small-container">
 	<h2 class="title"id="pro">Sneakers</h2>
 	<div class="row">
-		<div class="col-61">
-			<img src="{% static 'images/a1.png' %}">
-			<h4>Triumph Men's Cycling T-Shirt</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-			</div>
-			<p>Rs.10 <a   class="add---cart cart19">Add to cart &#10011</a></p>
-		</div>
-		<div class="col-61">
-			<img src="{% static 'images/a2.png' %}">
-			<h4>Puma Men's Cotton Shorts</h4>
+		{% for prods in prod %}
+		<div class="col-6">
+			<img src="{{prods.img.url}}">
+			<h4>{{prods.prodname}}</h4>
 			<div class="rating">
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star"></i>
@@ -72,32 +61,9 @@
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star-o"></i>
 			</div>
-			<p>Rs.99  <a   class="add---cart cart20">Add to cart &#10011</a></p>
-			</div>
-		<div class="col-61">
-			<img src="{% static 'images/a3.png' %}">
-			<h4>Jogger Track Pants</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o"></i>
-				<i class="fa fa-star-o"></i>
-			</div>
-			<p>Rs.150  <a   class="add---cart cart21">Add to cart &#10011</a></p>
+			<p>{{prods.price}}<a class="{{prods.addcart}}">Add to cart &#10011</a></p>
 		</div>
-		<div class="col-61">
-			<img src="{% static 'images/a4.png' %}">
-			<h4>Triumph Tennis T-Shirt</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i ass="fa fa-star-half-o"></i>
-			</div>
-			<p>Rs.25  <a   class="add---cart cart22">Add to cart &#10011</a></p>
-		</div>
+	{% endfor %}
 </div>
 </div>
 

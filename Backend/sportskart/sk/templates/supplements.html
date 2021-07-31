@@ -30,7 +30,7 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/products">Products</a></li>
             <li><a href="/account">Account</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/about">About</a></li>
 			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
             </ul>
         </nav>
@@ -51,21 +51,10 @@
 <div class="small small-container">
 	<h2 class="title"id="pro">Supplements</h2>
 	<div class="row">
-		<div class="col-61">
-			<img src="{% static 'images/s1.png' %}">
-			<h4>MuscleBlaze-Beginners Protein</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-			</div>
-			<p>Rs.10 <a   class="add---cart cart19">Add to cart &#10011</a></p>
-		</div>
-		<div class="col-61">
-			<img src="{% static 'images/s2.png' %}">
-			<h4>MuscleBlaze-Whey Active</h4>
+		{% for prods in prod %}
+		<div class="col-6">
+			<img src="{{prods.img.url}}">
+			<h4>{{prods.prodname}}</h4>
 			<div class="rating">
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star"></i>
@@ -73,56 +62,10 @@
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star-o"></i>
 			</div>
-			<p>Rs.99  <a   class="add---cart cart20">Add to cart &#10011</a></p>
-			</div>
-		<div class="col-61">
-			<img src="{% static 'images/s3.png' %}">
-			<h4>Serious ON Mass-Gainer</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o"></i>
-				<i class="fa fa-star-o"></i>
-			</div>
-			<p>Rs.150  <a   class="add---cart cart21">Add to cart &#10011</a></p>
+			<p>{{prods.price}}<a class="{{prods.addcart}}">Add to cart &#10011</a></p>
 		</div>
-		<div class="col-61">
-			<img src="{% static 'images/s4.png' %}">
-			<h4>Inline Musclemass</h4>
-			<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i ass="fa fa-star-half-o"></i>
-			</div>
-			<p>Rs.25  <a   class="add---cart cart22">Add to cart &#10011</a></p>
-		</div>
-		<div class="col-61">
-		<img src="{% static 'images/s5.png' %}">
-		<h4>Herbalife-Rebuld Strength</h4>
-		<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o"></i>
-			</div>
-			<p>RS.50  <a   class="add---cart cart23">Add to cart &#10011</a></p>
-		</div>
-		<div class="col-61">
-		<img src="{% static 'images/s6.png' %}">
-		<h4>Absorb Whey Isolate</h4>
-		<div class="rating">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o"></i>
-			</div>
-			<p>Rs.249  <a   class="add---cart cart24">Add to cart &#10011</a></p>
-		</div>
+	{% endfor %}
+		
        
 </div>
 </div>

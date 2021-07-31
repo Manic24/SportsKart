@@ -106,13 +106,9 @@ function displaycart() {
 		productcontainer.innerHTML ='';
 		Object.values(cartItems).map(item =>{
 			productcontainer.innerHTML += `
-			
-  {% load static %} 
 			<div class="product" id="${item.tag}">
 			<div class="product-title" >
-			<div class="div"><img src="{% static 'images/cancel1.png' %}" width="5px" height="5px" onclick="remove('${item.tag}')" >
-			
-			<img src="./images/${item.tag}.png">
+			<div class="div"><i class="fas fa-times-circle" width="5px" height="5px" onclick="remove('${item.tag}')"></i>
 			
 			<br><span>${item.name}</span>
 			</div>
@@ -120,8 +116,8 @@ function displaycart() {
 			</div>
 			<div class="price">Rs. ${item.price}.00</div>
 			<div class="quantity">${item.incart}
-			<a onclick="addcar('${item.tag}')"><i class="fas fa-sort-up"></i></a>
-			<a onclick="mincar('${item.tag}')"><i class="fas fa-sort-down"></i></a>
+			<a onclick="addcar('${item.tag}')"><p>+</p></a>
+			<a onclick="mincar('${item.tag}')"><p>-</p></a>
 			</div>
 			<div class="total">
 			Rs. ${item.incart*item.price}.00

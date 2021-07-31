@@ -9,31 +9,16 @@
     
   </head>
   <body>
-    <!--header-->
-<div class="header">
-<div class="container">
-    <div class="navbar">
-        <div class="logo">
-            <a href="home/" class="sk" style="color:lightcoral;">Sports</a>
-			<a href="home/" class="sk" style="color:indigo;">Kart</a>
-        </div>
-        <nav>
-            <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/account">Account</a></li>
-            <li><a href="">About</a></li>
-			<li><a href="/cart"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"><span>0</span></a></li>
-            </ul>
-        </nav>
-		
-    </div>
-</div>
-</div> 
 
+  <div class="account-page">
+    <div class="tiitle">
+      <h1>SPORTSKART</h1>
+    </div>
+
+   
     <!-- account-page -->
 
-    <div class="account-page">
+    
       <div class="container">
         <div class="row"> 
           <div class="col-2">
@@ -52,27 +37,23 @@
               </form>
              
             </div>
-            
+               <div>
+                  {% for message in messages %}
+                    <h2 style="text-align:center"> {{message}} </h2>
+                  {% endfor %}
+              </div>
           </div>
         </div>
       </div>
     </div>
- 
-    <!-- js for toogle menu  -->
 
-    <script>
-      var MenuItems = document.getElementById("MenuItems");
-      MenuItems.Style.maxHeight = "0px";
-      function menutoogle() {
-        if (MenuItems.style.maxHeight == "0px") {
-          MenuItems.style.maxHeight = "200px";
-        } else {
-          MenuItems.style.maxHeight = "0px";
-        }
-      }
-    </script>
+    {% comment %} <div>
+    {% for message in messages %}
+      <h3> {{message}} </h3>
+    {% endfor %}
+    </div> {% endcomment %}
 
-  <!-----Footer------>
+    <!-----Footer------>
 <div class="footer">
 	<div class="container">
 	<center><h2>Contact Us</h2></center>

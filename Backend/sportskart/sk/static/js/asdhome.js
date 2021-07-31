@@ -1,31 +1,25 @@
 let cart1=document.querySelectorAll(".add--cart");
 let product1=[
     {
-	name:"Nike Sneakers",
+	name:"Nike Men's Todos Running Shoes",
 	tag:"product2",
 	price:99,
 	incart:0
 
 },{
-	name:"Nike Men's Todos Running Shoes",
+	name:"MuscleBlaze-Whey Active",
 	tag:"s2",
 	price:248,
 	incart:0,
 
 },{
-	name:"MuscleBlaze-Whey Active",
+	name:"Cricket Kit",
 	tag:"z2",
 	price:20,
 	incart:0
 
 },{
-	name:"Cricket Kit",
-	tag:"a4",
-	price:10,
-	incart:0
-
-},{
-	name:"N95-Mask Grey",
+	name:"Vast Day and Night Vision Sunglasses",
 	tag:"x5",
 	price:499,
 	incart:0
@@ -137,14 +131,13 @@ function displaycart() {
 		Object.values(cartItems).map(item =>{
 			productcontainer.innerHTML += `
 			<div class="product">  
-			<img src="images/cancel1.png" width="10px" height="10px" onclick="remove()" >
-			<!-- <img src="./images/${item.tag}.png"><span>${item.name}</span> -->
-			${item.image}
+			<i class="fas fa-times-circle" width="5px" height="5px" onclick="remove('${item.tag}')"></i>
+			<span>${item.name}</span>
 			</div>
 			<div class="price">Rs. ${item.price}.00</div>
 			<div class="quantity">${item.incart}
-			<i class="fas fa-sort-up"></i>
-			<i class="fas fa-sort-down"></i>
+			<p>+</p>
+			<p>-</p>
 			</div>
 			<div class="total">
 			Rs. ${item.incart*item.price}.00

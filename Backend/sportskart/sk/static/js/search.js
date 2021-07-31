@@ -2,7 +2,7 @@ function myFunction() {
     var search_input = document.getElementById("searchInput").value;
     var input = search_input.toUpperCase();
     // console.log(input);
-    var contents = document.getElementsByClassName("col-61");
+    var contents = document.getElementsByClassName("{{prods.prodname}}");
   
     for (let i = 0; i < contents.length; i++) {
       // console.log(contents[i].innerText);

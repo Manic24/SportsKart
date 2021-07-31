@@ -125,13 +125,13 @@ function displaycart() {
 		Object.values(cartItems).map(item =>{
 			productcontainer.innerHTML += `
 			<div class="product">
-			<img src="images/cancel1.png" width="10px" height="10px" onclick="remove()" >
-			<img src="./images/${item.tag}.png"><span>${item.name}</span>
+			<i class="fas fa-times-circle" width="5px" height="5px" onclick="remove('${item.tag}')"></i>
+			<span>${item.name}</span>
 			</div>
 			<div class="price">Rs. ${item.price}.00</div>
 			<div class="quantity">${item.incart}
-			<i class="fas fa-sort-up"></i>
-			<i class="fas fa-sort-down"></i>
+			<p>+</p>
+			<p>-</p>
 			</div>
 			<div class="total">
 			Rs. ${item.incart*item.price}.00

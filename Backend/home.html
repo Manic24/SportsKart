@@ -71,10 +71,9 @@
 <div class="small small-container">
 	<h2 class="title" id="hp">New Arrivals</h2>
 	<div class="row">
-	{% for prods in prod %}
 		<div class="col-6">
-			<img src="{{prods.img.url}}">
-			<h4>{{prods.prodname}}</h4>
+			<img src="{% static 'images/product2.png' %}">
+			<h4>Nike Men's Todos Running Shoes</h4>
 			<div class="rating">
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star"></i>
@@ -82,9 +81,56 @@
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star-o"></i>
 			</div>
-			<p>{{prods.price}}<a class="{{prods.addcart}}">Add to cart &#10011</a></p>
+			<p>Rs.99 <a   class="add--cart cart13">Add to cart &#10011</a></p>
 		</div>
-	{% endfor %}
+		<div class="col-6">
+			<img src="{% static 'images/s2.png' %}">
+			<h4>MuscleBlaze-Whey Active</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>Rs.248 <a   class="add--cart cart14">Add to cart &#10011</a></p>
+			</div>
+		<div class="col-6">
+			<img src="{% static 'images/z2.png' %}">
+			<h4>Cricket Kit</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>Rs.20 <a   class="add--cart cart15">Add to cart &#10011</a></p>
+		</div>
+		<div class="col-6">
+		<img src="{% static 'images/x5.png' %}">
+		<h4>Vast Day and Night Vision Sunglasses</h4>
+		<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+			</div>
+			<p>RS.499 <a  class="add--cart cart17">Add to cart &#10011</a></p>
+		</div>
+		<div class="col-6">
+		<img src="{% static 'images/g1.png' %}">
+		<h4>PVC Home Gym Set 10-20kg Plate 3feet curl Rod and Dumbbells rods</h4>
+		<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+			</div>
+			<p>Rs.399 <a  class="add--cart cart18">Add to cart &#10011</a></p>
+		</div>
 	</div>
 </div>
 <br>
