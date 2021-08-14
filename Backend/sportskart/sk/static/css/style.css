@@ -34,10 +34,10 @@ body{
 /*---catagories---*/
 .grid-container {
 	display: grid;
-	grid-template-columns: auto auto  auto;
-	grid-gap: 20px;
+	grid-template-columns: auto auto auto;
+	grid-gap: 50px;
 	
-	padding: 30px;
+	padding: 50px;
 	
   }
   
@@ -187,7 +187,7 @@ nav li h1{
 	width: 100%;
 	line-height: 50px;
 	margin: 25px 0;
-	color: black;
+	color: white;
 
 }
 
@@ -274,16 +274,17 @@ nav li h1{
 	color: rgb(203, 227, 235);
 	background: lightcoral;
 }
+.headerr{
+	min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
 .header{
 	background: radial-gradient(lightgray,rgb(196, 151, 196));
 }
 
-.header3{
-	/* max-height: 500px; */
-	height: 600px;
-	width: 100%;
-	background-image:url({% static 'images/image1.png' %});	
-}
 
 
 .keycol{
@@ -301,8 +302,9 @@ nav li h1{
 	align-items: center;
 }
 
-.header .row{
-	margin-top: 80px;
+.headerr .row{
+	margin-top: 150px;
+	margin-left: 70px;
  }
 .categories{
 	margin: 70px 0;
